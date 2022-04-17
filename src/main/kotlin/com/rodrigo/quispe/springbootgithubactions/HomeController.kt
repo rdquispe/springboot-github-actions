@@ -16,7 +16,6 @@ class HomeController {
         hashMapOf("message" to "Hello World!")
 
     @PostMapping(path = ["/user"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun user(@RequestBody userRequest: UserRequest): ResponseEntity<HashMap<String, Any>> {
-        return ResponseEntity.ok(hashMapOf("username" to userRequest.username))
-    }
+    fun user(@RequestBody userRequest: UserRequest): ResponseEntity<HashMap<String, Any>> =
+        ResponseEntity.ok(hashMapOf("username" to userRequest.username))
 }
